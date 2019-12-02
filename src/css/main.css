@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Gupter|Poppins:500,900&display=swap');
+/*
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Gupter', serif;
+*/
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+        url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+        url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.laranja{
+    background-color: #FF4F2C !important;
+}
+
+.amarelo{
+    background-color: #FFCD42 !important;
+}
+
+.azul{
+    background-color: #3960EE !important;
+}
+.verde{
+    background-color: #007D25 !important;
+}
+
+body{
+    background-color: #Fefefe;
+    font-family: 'Gupter', serif;
+}
+
+p{
+    font-family: 'Gupter', serif;
+    font-size: 1.2em !important;
+}
+
+button{
+    background-color: #967D36 !important;
+    border-style: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover{
+    background-color: rgb(107, 88, 34) !important;
+    border-style: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.black{
+    color: #222 !important;
+}
+
+#section4{
+    margin: 5em 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#tedraval{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+}
+
+.is-medium{
+    max-width: 100% !important;
+    text-align: left;
+}
+
+
+#conteudo h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 45px !important;
+}
+
+#conteudo h1, p{
+    color: #fefefe !important;
+}
+
+.hero h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+#abaixar{
+    text-align: center;
+    position: relative;
+    font-size: 2em;
+}
+
+.bottom-menu{
+    z-index: 1;
+    font-size: 1em;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.bottom-menu-2{
+    z-index: 1;
+    font-size: 1em;
+    max-width: 100%;
+    margin: 2em;
+}
+
+.bottom-menu-2 ul a li{
+    color: #fefefe;
+    text-decoration: none;
+    text-align: center;
+    float: left;
+    list-style: none;
+    width: 20%;
+    padding: 1%;
+    height: 100%;
+    background-color: #fefefe;
+    border-bottom: 5px solid #fefefe;
+}
+
+.bottom-menu-2 ul a li.selected{
+    opacity: 1;
+    border-bottom: 5px solid #BF9780;
+}
+
+.bottom-menu ul a li{
+    color: #fefefe;
+    text-decoration: none;
+    text-align: center;
+    float: left;
+    list-style: none;
+    width: 20%;
+    padding-top: 5em;
+    padding: 2%;
+    height: 100%;
+    background-color: #fefefe;
+    border-bottom: 5px solid #fefefe;
+}
+
+.material-icons{
+    color: #333;
+}
+
+.material-icons:hover{
+    color: #BF9780;
+    animation-delay: .8ms;
+}
+
+.tedraval-logo{
+    width: 2em !important;
+}
+
+.modal-content{
+    height: 80%;
+}
