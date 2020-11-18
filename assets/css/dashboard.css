@@ -1,0 +1,22 @@
+.paper{
+    padding: 40px;
+}
+
+nav{
+    display: block;
+}
+
+.left{
+    margin: 50px;
+}
+
+.right{
+    display: inline;
+    float: right;
+    margin-top: -65px;
+    margin-right: 40px;
+}
+
+.right a{
+    margin: 5px 30px;   
+}   
