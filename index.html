@@ -1,26 +1,418 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tedraval</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
+		<title>React Básico</title>
+		
+		<link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="box">
-            <h1>Tedraval</h1>
-            <p>Este é um blog e portifólio desenvolvido por
-                <a href="#">Breno Freitas</a>,
-                com o intuíto de produzir e divulgar
-                suas ideias.
-            </p>
 
-            <a href="./assets/pages/dashboard.html" class="button">Entrar</a>
-        </div>
-    </div>
+
+    <!-- Onde será renderizado as coisas do React-->
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- usando o babel -->
+    <script type="text/babel">
+        //const root  = document.getElementById('root');
+        //ReactDOM.render('<h1>Título</h1>', root);
+        //ReactDOM.render(<h1>Título</h1>, root);
+
+        /* # Primeiro component */
+        /*
+        let nome = "Breno Freitas"
+
+        ReactDOM.render(<h3>O meu nome é {nome}</h3>, root);
+        */
+
+        /*
+        // # Criando uma function component
+        function MeuComponente() {
+
+            var nome = "Breno"
+            var apelido = "Freitas"
+
+            return (
+                <div>
+                    <h1>Olá React!</h1>
+                    <p>O meu nome é {nome} {apelido}</p>
+                </div>
+            )
+        }
+        */
+
+        /* # Class component */
+
+        // # Existe mais funcionalidades que o function
+
+        /*
+        class MeuComponente extends React.Component{
+            // método ou função render
+            render(){
+                return(
+                    <div>
+                        <p>teste</p>
+                    </div>
+                )
+            } 
+
+            // declara o <MeuComponente /> do lado do ,root
+        }
+        */
+
+        /*
+        // Criando um component dentro de outro
+
+        class CompA extends React.Component{
+            render(){
+                return(
+                    <h3>CompA</h3>
+                )
+            }
+        }
+
+        class CompB extends React.Component{
+            render(){
+                return(
+                    <h3>CompB</h3>
+                )
+            }
+        }
+
+        class MeuComponente extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <CompA />
+                        <hr/>
+                        <CompB/>
+                    </div>
+                ) 
+            }
+        }
+        */
+
+				/*
+				// # COMPONENT PROPS
+				// props é tipo um pacote, pra colocar propriedades pra utilizar depois no código
+				function CompA(props){
+					return(
+						<div>
+							<p>Olá, {props.nome} {props.apelido}.</p>	
+						</div>
+					)
+				}
+
+				class CompB extends React.Component{
+					render(){
+						return(
+							<div>
+								<p>Olá novamente, {this.props.nome} {this.props.apelido} </p>
+							</div>
+						)
+					}
+				}
+
+				*/
+
+				/*
+				// # MAIS ASPETOS SOBRE USO DE PROPS
+
+				function CompA(props){
+					return(
+						<div>
+							<p>Nome {props.nome}</p>	
+						</div>
+					)
+				}
+
+				function App(){
+					return(
+						<div>
+							<CompA nome="Ana" />
+							<CompA nome="Aisha" />
+							<CompA nome="Breno" />
+							<CompA nome="Ícaro"/>
+						</div>
+					)
+				}
+
+				//ReactDOM.render( <App nome="Breno" apelido="Freitas" />, root);
+				*/
+
+				/*
+				// # Mais utilizações com props
+
+				class Adicao extends React.Component{
+					render(){
+						return(
+							<div>
+								<p>O nome é {this.props.nome} </p>
+								<p>O resultado de {this.props.a} + {this.props.b} = {this.props.a + this.props.b} </p>
+							</div>
+						)
+					}
+				}
+
+				//ReactDOM.render(<Adicao a={10} b={20} nome={"Breno"} />, root);
+				*/
+
+			
+
+				/*
+
+				// # Como utilizar CSS nos Components
+
+				class CompA extends React.Component{
+					render(){
+						return(
+							// não se pode usar <div class="red"></div>
+							// a palavra class é reservada ao react
+							<div className="red">
+								<p>Texto do CompA</p>	
+							</div>
+						)
+					}
+				}
+
+				class CompB extends React.Component{
+					render(){
+						return(
+							// não se pode usar <div class="red"></div>
+							// a palavra class é reservada ao react
+							<div className="green">
+								<p>Texto do CompB</p>	
+							</div>
+						)
+					}
+				}
+
+				class App extends React.Component{
+					render(){
+						return(
+							<div>
+								<CompA />
+								<CompB />
+							</div>
+						)
+					}
+				}
+
+				// ReactDOM.render( <App /> ,root);
+				*/
+
+				/*
+
+				// Incluir o REACTDOM RENDER dentro de um component
+
+				function Tempo(){
+					// jsx a incluido na function component
+					const conteudo = (
+						<div>
+							<h3>Tempo atual</h3>
+							<p>Hora atual: {new Date().toLocaleTimeString()} </p>
+						</div>
+					)
+
+					ReactDOM.render(
+						conteudo,
+						document.getElementById('root')
+					)
+				}
+
+				setInterval(Tempo, 1000);
+
+        // extrutura básica de renderização
+        const root = document.getElementById('root');
+				//ReactDOM.render( '' ,root);
+				
+				*/
+
+				/*
+				// # INLINE STYLING DENTRO DE UM COMPONENTE
+
+				class App extends React.Component{
+
+					// {color: "red"} // objeto de javascript
+
+					render(){
+
+						const estilo = {
+							color: "black", 
+							backgroundColor: "yellow",
+							padding: "20px"
+
+						}
+
+						// ou cria uma cost e usa com uma chave, ou faz o código em linha usando duas chaves {{ textColor: black }}
+
+						return(
+							<div>
+								<p style={ estilo }>Texto do componente</p>
+							</div>
+						)
+					}
+				}
+	
+				const root = document.getElementById('root');
+				ReactDOM.render( <App/> ,root);
+				*/
+
+			/*
+			// #Diferença de props para state
+				class App extends React.Component{
+					// o constructor vem da classe principal React.Component
+					constructor(){
+						super();
+						console.log('teste');
+
+						//this.state é um objeto 
+						this.state = {
+							nome: "Breno",
+							idade: 23	
+						}
+					}
+
+					render(){
+						return(
+							<div>
+								<p>Nome: {this.state.nome} {this.props.Apelido} </p>
+								<p>Idade: {this.state.idade} </p>
+							</div>
+						)
+					}
+				}
+
+				const root = document.getElementById('root');
+				ReactDOM.render( <App Apelido="Freitas" />, root);
+			*/
+
+
+			/*
+			class App extends React.Component{
+
+				constructor(){
+					super()
+
+					this.state = {
+						nome: 'Breno'
+					}
+				}
+
+				// this.state = eu consigo mudar o valor
+				// this.props = eu não consigo mudar o valor 
+			
+				render(){
+					// this.state.nome = "Bruna";
+
+					return(
+						<div>
+							<p>Nome:  {this.state.nome} </p>	
+							<p>Idade: {this.props.idade} </p>
+						</div>
+					)
+				}
+			}
+
+			const root = document.getElementById('root');
+			ReactDOM.render( <App idade="45"/>, root);
+			
+			*/
+
+			/*
+			// #parent and chield components
+
+			class Identificacao extends React.Component{
+				
+				constructor(){
+					super()
+
+					this.state = {
+						nome: "Breno Freitas",
+						idade: 46
+					}
+				}
+				
+				render(){
+
+					this.state.nome = "Joaquim";
+
+					return(
+						<div>
+							<Nome nome = {this.state.nome} />
+							<Idade idade = {this.state.idade}/>
+						</div>
+					)
+				}
+			}
+
+			class Nome extends React.Component{
+				render(){
+					return(
+						<p>Nome: {this.props.nome}</p>
+					)
+				}
+			}
+
+			class Idade extends React.Component{
+				render(){
+					return(
+						<p>Idade: {this.props.idade} </p>
+					)
+				}
+			}
+
+
+			const root = document.getElementById('root');
+			ReactDOM.render(<Identificacao/>, root);
+		*/
+		
+		// # INTRODUÇÃO AOS EVENTOS EM REACTJS
+
+		class App extends React.Component{
+
+			// ----- constructor
+			constructor(props){
+				super(props) // usando as propriedades lá do <App />
+		
+				this.state = {
+					nome: "João"
+				}
+
+				this.cmd_click = this.cmd_click.bind(this) // liga isso a função no render
+			}
+
+			// evento click ou função click
+
+			cmd_click(){
+				this.setState({nome: "Joaquim"})
+				console.log("Olá!");
+			}
+
+			// render
+
+			// ao clicar no botão mudar o nome
+			render(){
+				return(
+					<div>
+						<p>Nome: {this.state.nome}</p>
+						<button onClick={this.cmd_click}>Clique</button>
+					</div>
+				)
+			}
+		}
+
+		const root = document.getElementById('root');
+		ReactDOM.render(<App/>, root);
+
+		</script>
 </body>
 
 </html>
